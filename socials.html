@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="socials.css">
+    <script>
+        function openTab(tabName) {
+            console.log("Switching to tab:", tabName);
+
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+
+            var selectedTab = document.getElementById(tabName);
+            selectedTab.style.display = "block";
+
+            console.log("Tab content:", selectedTab.innerHTML);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>VPVasP</h1>
+
+        <div class="w3-bar">
+            <a href="index.html">
+                <button class="w3-bar-item">Home </button>
+            </a>
+
+            <a href="projects.html">
+                <button class="w3-bar-item">Projects</button>
+            </a>
+            <a href="socials.html">
+                <button class="w3-bar-item">Contact</button>
+            </a>
+          </div>
+
+          <h2>Get in Touch:</h2>
+<div class="centered-container">
+    <a href="https://www.linkedin.com/in/vasilhs-pinis/" target="_blank" rel="noopener noreferrer">
+        <button class="linkedin-button">
+            <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="30" width="40" />
+            <span>LinkedIn</span>
+        </button>
+    </a>
+</div>
+
+<div class="centered-container">
+    <a href="https://github.com/VPVasP" target="_blank" rel="noopener noreferrer">
+        <button class="github-button">
+            <img src="https://cdn.iconscout.com/icon/free/png-512/free-github-159-721954.png?f=webp&w=256" alt="github" height="30" width="40" />
+            <span>GitHub</span>
+        </button>
+    </a>
+</div>
+
+<div class="centered-container">
+    <a href="https://twitter.com/VPVasP" target="_blank" rel="noopener noreferrer">
+        <button class="twitter-button">
+            <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter" height="30" width="40" />
+            <span>Twitter</span>
+        </button>
+    </a>
+</div>
+
+<div class="centered-container">
+    <a href="mailto:vasilhspinis@gmail.com" target="_blank" rel="noopener noreferrer">
+        <button class="gmail-button">
+            <img src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" alt="email" height="30" width="40" />
+            <span>Email</span>
+        </button>
+    </a>
+</div>
+</body>
+
+</html>
