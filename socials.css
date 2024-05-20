@@ -316,3 +316,12 @@ margin-bottom: 15px;
 .centered-container a:hover {
   text-decoration: none; 
 }
+.w3-bar-item.btn {
+  color: rgb(0, 0, 0);
+  background-color: #f6f8fa; 
+  border: 1px solid white; 
+}
+.w3-bar-item.btn:hover {
+background-color: white; 
+color: black; 
+}

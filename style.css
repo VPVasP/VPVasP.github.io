@@ -100,3 +100,13 @@ body {
   .github-link:hover {
     background-color: #434141;
   }
+  .w3-bar-item.btn {
+    color: rgb(0, 0, 0);
+    background-color: #f6f8fa; 
+    border: 1px solid white; 
+}
+.w3-bar-item.btn:hover {
+  background-color: white; 
+  color: black; 
+}
+
