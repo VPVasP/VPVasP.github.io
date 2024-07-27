@@ -4,100 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasilis Pinis</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-        .header {
-            background-color: #24292e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-        }
-        .container {
-            flex: 1; /* Allows container to take up available space */
-            width: 70%;
-            margin: 30px auto;
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        .profile-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .avatar {
-            border-radius: 50%;
-            margin-right: 30px;
-            border: 3px solid #ddd;
-        }
-        .profile-info {
-            flex-grow: 1;
-        }
-        .profile-info h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .profile-info p {
-            margin: 5px 0;
-            color: #666;
-            font-size: 18px;
-        }
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #e1e4e8;
-            margin-bottom: 20px;
-        }
-        .tabs a {
-            padding: 15px 25px;
-            text-decoration: none;
-            color: #000;
-            border: 1px solid transparent;
-            border-radius: 5px 5px 0 0;
-            font-size: 18px;
-        }
-        .tabs a:hover {
-            background-color: #f1f8ff;
-            border-color: #e1e4e8;
-        }
-        .tab-content {
-            padding: 20px 0;
-        }
-        .repository {
-            border: 1px solid #e1e4e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        .repository h3 {
-            margin: 0 0 15px;
-            font-size: 28px;
-        }
-        .repository p {
-            margin-bottom: 15px;
-            color: #586069;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #f5f5f5; /* Same as body background color */
-            color: #000; /* Black text color */
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -123,17 +30,150 @@
     <div class="tab-content" id="about">
         <div class="repository">
             <h3>Projects</h3>
-            <article class="item">
-                <a href="https://store.steampowered.com/app/2554930/Shadows_Are_Alive/" target="_blank" class="image fit">
-                    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2554930/header.jpg?t=1721944636" width="400" height="250" alt="Shadows Are Alive">
-                </a>
-                <header>
-                    <h3>Shadows Are Alive</h3>
-                </header>
-            </article>
-            
+            <div class="projects-container">
+                <article class="item">
+                    <a href="https://store.steampowered.com/app/2554930/Shadows_Are_Alive/" target="_blank" class="image fit">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2554930/header.jpg?t=1721944636" alt="Shadows Are Alive">
+                    </a>
+                    <header>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo" class="icon">
+                        <h3>Shadows Are Alive</h3>
+                    </header>
+                </article>
+                <article class="item">
+                    <a href="https://store.steampowered.com/app/1455540/Smash_Track_Drifters/*" target="_blank" class="image fit">
+                        <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1455540/ss_1632945d504ba9ece3a6678f2a134bff76decf48.600x338.jpg?t=1656689349" alt="Blend In">
+                    </a>
+                    <header>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Itch Logo" class="icon">
+                        <h3>Smash Track Drifters</h3>
+                    </header>
+                </article>
+                </article>
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/blend-in-*" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjU2MTMyNS8xNTI0ODE1NS5wbmc=/original/A42b0y.png" alt="Blend In">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Blend In</h3>
+                    </header>
+                </article>
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/blend-in-*" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjUwOTc4NC8xNDkxNjEwNy5wbmc=/original/EA5iU5.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Agents Rush</h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/card-guess-game" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjM0MzU5Mi8xMzg4MzA3NS5wbmc=/original/zYworG.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Card Guess </h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/number-guess-game" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQ1MzY4OC8xNDU0NTQyNS5wbmc=/original/hFO%2B%2Fr.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Number Guess</h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/football-lineup-builder" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjY1MzI5MS8xNTgwOTIyMy5wbmc=/original/i%2FHjhO.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Football Lineup Builder</h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/boxing-round-interval-android-application" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQ4NTYzMy8xNDkxMTcxMC5wbmc=/original/Tk3lFW.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Boxing Round Interval </h3>
+                    </header>
+                </article>
+
+                
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/wheel-of-names" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjU4NTUwMi8xNTM5MzcxOC5wbmc=/original/baTv8i.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Wheel of Names </h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/govenors" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQxNjU0My8xNDMxNTM0OS5wbmc=/original/Z9wHog.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Govenors </h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/endless-horse-runner-game" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQ2ODAzNC8xNDY0NTgzMC5wbmc=/original/YhMkUP.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Endless Horse Runner Game </h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/pvp-turn-based-combat" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjQxODc1My8xNDMxNDk4OS5wbmc=/original/Fd8foi.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Sword Fighters </h3>
+                    </header>
+                </article>
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/dungeon-slasher" target="_blank" class="image fit">
+                        <img src="https://img.itch.zone/aW1hZ2UvMjM0MzU0NC8xNDI5MzkxOS5wbmc=/original/uh7kwc.png" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Dungeon Slasher </h3>
+                    </header>
+                </article>
+
+
+                <article class="item">
+                    <a href="https://itchiovp.itch.io/godfathercard-guess-game" target="_blank" class="image fit">
+                        <img src="https://camo.githubusercontent.com/efc984d0299904343aa345a71a2cffd9c63750b2acd2ea5f418eaa8750536621/68747470733a2f2f696d672e697463682e7a6f6e652f615731685a3255764d6a51304e7a49334f4338784e4455774d4451304d693577626d633d2f6f726967696e616c2f39636a6837672e706e67" alt="Agents Rush">
+                    </a>
+                    <header>
+                        <img src="https://cdn2.steamgriddb.com/icon/a72437afb97803a6acb5420ef8b8a90f.png" alt="Itch Logo" class="icon">
+                        <h3>Godfather Card Guess Game </h3>
+                    </header>
+                </article>
+
+            </div>
+        </div>
     </div>
-</div>
 </div>
 
 <footer>
