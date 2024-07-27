@@ -1,106 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="VPVasP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasilis Pinis</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #24292E;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #24292e;
             color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+        }
+        .avatar {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        .tabs a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #000000;
+            border: 1px solid transparent;
+            border-radius: 5px 5px 0 0;
+        }
+        .tabs a:hover {
+            background-color: #f1f8ff;
+            border-color: #e1e4e8;
+        }
+        .tab-content {
+            padding: 20px 0;
+        }
+        .repository {
+            border: 1px solid #e1e4e8;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .repository h3 {
+            margin: 0 0 5px;
+        }
+        .repository p {
+            margin-bottom: 0;
+            color: #586069;
         }
     </style>
-    
-    <script>
-        function openTab(tabName) {
-            console.log("Switching to tab:", tabName);
-            
-            var tabs = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = "none";
-            }
-            
-            var selectedTab = document.getElementById(tabName);
-            selectedTab.style.display = "block";
-            
-            console.log("Tab content:", selectedTab.innerHTML);
-        }
-    </script>
 </head>
+<body>
 
-<body class="text-center">
+<div class="header">
     <h1>Vasilis Pinis</h1>
-    <div class="w3-bar">
-        <a href="index.html">
-            <button class="w3-bar-item btn btn-primary">About</button>
-        </a>
+</div>
 
-        <a href="games.html">
-            <button class="w3-bar-item btn btn-primary">Projects</button>
-        </a>
-        <a href="socials.html">
-            <button class="w3-bar-item btn btn-primary">Contact</button>
-        </a>
+<div class="container">
+    <div class="profile-header">
+        <img src="https://avatars.githubusercontent.com/u/102414151?v=4" alt="Avatar" class="avatar" width="100" height="100">
+        <div class="profile-info">
+            <h1>Vasilis Pinis</h1>
+            <p>Unity Developer @ Futura Games | Software Developer | Bachelor of Science in Computer Programming and Games Development</p>
+        </div>
+    </div>
+    
+    <div class="tabs">
+        <a href="#overview">About</a>
+        <a href="#repositories">Projects</a>
+        <a href="#projects">Contact</a>
+
+    </div>
+    <div class="tab-content" id="about">
+        <div class="repository">
+            <h3>About Me</h3>
+            <p>I am Vasilis, an enthusiastic and dedicated developer with a strong foundation in programming languages such as C#, Python, HTML/CSS, JavaScript, and C++, and in game development using Unity.</p>
+            <p>Skilled in developing applications on various platforms including web, desktop, and games, with growing proficiency in technologies used for backend, frontend, and game development.</p>
+            <p>Skilled in problem-solving and collaborating effectively in a team environment and delivering high-quality solutions.</p>
+            <p>My academic background, with an anticipated Bachelor of Science degree from Middlesex University London, which I will receive from SAE Institute Athens in August 2024, complements my practical experience in computer games and programming.</p>
+            <p>Fluent in English and Greek, with a creative and collaborative approach to problem-solving and a passion for continuous learning and innovation.</p>
+            <p>Open to Networking & Opportunities. Please don't hesitate to get in touch with me.</p>
+        </div>
     </div>
 
-    <img src="https://avatars.githubusercontent.com/u/102414151?v=4" alt="Description of the site" class="profile-image">
-    <h1>Hi there <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">, I am Vasilis</h1>
 
-    <h2>🚀 About Me</h2>
-    <p>I am Vasilis, a young and passionate developer from Athens, Greece.</p>
-    <p>From an early age, I loved the idea of programming and the opportunity it gave people to cultivate their logic and artistic nature.</p>
-    <p>Ever since I created my first game back in high school I decided to follow computer programming as a career.</p>
-    <p>After high school, I pursued a bachelor's of science degree in computer programming and games development.</p>
-    <p>I've completed projects in professional work settings, within the college curriculum and independently demonstrating my versatility and passion for programming and development.</p>
-    <p>From creating games and applications to developing web solutions. I've honored my skills in various programming languages, tools, engines and technologies.</p>
-   
-    <h2>🎓 Education</h2>
-    <ul class="list-unstyled">
-        <p>Currently Enrolled as a Third Year Student at SAE Creative Media Education Athens pursuing a bachelors of Science in Computer Programming and Game Development with an expected graduation date in August 2024.</p>
-        <p>Through my studies I've gained hands on Experience in Programming with Languages Such as C# ,C++, Python, HTML, CSS, JavaScript and in Game Development using Unity Engine, Godot and Unreal Engine.</p>
-    </ul>
-
-    <h2>💻Programming Languages</h2>
-
-    <p>C#, C++, HTML, CSS, JavaScript, Python</p>
-
-    <h2>🎮Game Development Tools</h2>
-
-    <p>Unity, Godot, Unreal Engine</p>
-
-        <h2> 🛠️Software Development Tools</h2>
-
-    <p>Git, GitHub, Jira</p>
-    
-    
-    <h3>Get in touch:</h3>
-    <p>
-      <a href="https://www.linkedin.com/in/vasilhs-pinis/" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="linkedin" height="30" width="40" /></a>
-      <a href="https://github.com/VPVasP" target="blank"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" height="30" width="40" /></a> 
-      <a href="https://twitter.com/VPVasP" target="blank"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter" height="30" width="40" /></a>
-      <a href="https://itchiovp.itch.io/" target="blank"><img src="https://cdn2.steamgriddb.com/icon_thumb/8b33ab221257b074d1d967042ad1d9d0.png" alt="itch.io" height="30" width="40" /></a> 
-      <a href="mailto:vasilhspinis@gmail.com" target="_blank"><img src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" alt="email" height="30" width="40" /></a>
-    </p>
-    
-    <h2>Programming Languages, Tools and Engines:</h2>
-    <p>
-      <img src="Images/CsharpLogo.png" alt="C# Logo" width="50" height="50" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1024px-.NET_Core_Logo.svg.png" alt="Asp.net Core" width="50" height="50" />
-      <img src="Images/html.png" alt="HTML5 Logo" width="50" height="50" />
-      <a href="https://isocpp.org/"><img src="Images/C++Logo.png" alt="C++ Logo" width="50" height="50" /></a>
-      <img src="Images/PythonLogo.png" alt="Python Logo" width="50" height="50" />
-      <img src="https://static-00.iconduck.com/assets.00/java-icon-2048x2048-yxty4s2p.png" alt="Java Logo" width="50" height="50" />
-      <img src="https://i.redd.it/tu3gt6ysfxq71.png" alt="Unity Logo" width="50" height="50" />
-      <img src="https://img.icons8.com/color/452/unreal-engine.png" alt="Unreal Engine Logo" width="50" height="50" />
-      <a href="https://git-scm.com/"><img src="Images/gitlogo.png" alt="Git Logo" width="50" height="50" /></a>
-    </p>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
