@@ -3,61 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function openTab(tabName) {
-            console.log("Switching to tab:", tabName);
-
-            var tabs = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabs.length; i++) {
-                tabs[i].style.display = "none";
-            }
-
-            var selectedTab = document.getElementById(tabName);
-            selectedTab.style.display = "block";
-
-            console.log("Tab content:", selectedTab.innerHTML);
+    <title>Vasilis Pinis</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-    </script>
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #24292e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .container {
+            flex: 1; /* Allows container to take up available space */
+            width: 70%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .avatar {
+            border-radius: 50%;
+            margin-right: 30px;
+            border: 3px solid #ddd;
+        }
+        .profile-info {
+            flex-grow: 1;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 18px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #e1e4e8;
+            margin-bottom: 20px;
+        }
+        .tabs a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #000;
+            border: 1px solid transparent;
+            border-radius: 5px 5px 0 0;
+            font-size: 18px;
+        }
+        .tabs a:hover {
+            background-color: #f1f8ff;
+            border-color: #e1e4e8;
+        }
+        .tab-content {
+            padding: 20px 0;
+        }
+        .repository {
+            border: 1px solid #e1e4e8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .repository h3 {
+            margin: 0 0 15px;
+            font-size: 28px;
+        }
+        .repository p {
+            margin-bottom: 15px;
+            color: #586069;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #f5f5f5; /* Same as body background color */
+            color: #000; /* Black text color */
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Vasilis Pinis</h1>
-    
-    <div class="w3-bar">
-        <a href="index.html">
-            <button class="w3-bar-item">Home </button>
-        </a>
 
-        <a href="games.html">
-            <button class="w3-bar-item">Projects</button>
-        </a>
-        <a href="socials.html">
-            <button class="w3-bar-item">Contact</button>
-        </a>
-    </div>
+<div class="header">
+    Vasilis Pinis
+</div>
 
-    <div id="Projects" class="tab-content-active">
-        <h2>Projects</h2>
-
-        <div class="w3-bar">
-            <a href="games.html">
-            <button class="w3-bar-item">Made with Unity</button>
-        </a>
-
-        <a href="C.NetProjects.html">       
-            <button class="w3-bar-item">C.NET Projects</button>
-        </a>
-
-        <a href="MischellaneousProjects.html">
-            <button class="w3-bar-item">Miscellaneous Projects</button>
-        </a>
+<div class="container">
+    <div class="profile-header">
+        <img src="https://avatars.githubusercontent.com/u/102414151?v=4" alt="Avatar" class="avatar" width="150" height="150">
+        <div class="profile-info">
+            <h1>Vasilis Pinis</h1>
+            <p>Unity Developer @ Futura Games | Software Developer | Bachelor of Science in Computer Programming and Games Development</p>
         </div>
+    </div>
+    
+    <div class="tabs">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="socials.html">Contact</a>
+    </div>
+    
+    <div class="tab-content" id="about">
+        <div class="repository">
+            <h3>Projects</h3>
+            <article class="item">
+                <a href="https://store.steampowered.com/app/2554930/Shadows_Are_Alive/" target="_blank" class="image fit">
+                    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2554930/header.jpg?t=1721944636" width="400" height="250" alt="Shadows Are Alive">
+                </a>
+                <header>
+                    <h3>Shadows Are Alive</h3>
+                </header>
+            </article>
+            
+    </div>
+</div>
 
-          
+<footer>
+    © 2024 Vasilis Pinis. All rights reserved.
+</footer>
 
-         
-          
-        
 </body>
 </html>
