@@ -3,158 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vasilis Pinis</title>
+    <title>Vasilis Pinis - Portfolio</title>
+    <link rel="stylesheet" href="pages.css">
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-        .header {
-            background-color: #24292e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-        }
-        .container {
-            flex: 1;
-            width: 70%;
-            margin: 30px auto;
-            background-color: white;
-            padding: 30px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        .profile-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .avatar {
-            border-radius: 50%;
-            margin-right: 30px;
-            border: 3px solid #ddd;
-        }
-        .profile-info {
-            flex-grow: 1;
-        }
-        .profile-info h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .profile-info p {
-            margin: 5px 0;
-            color: #666;
-            font-size: 18px;
-        }
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #e1e4e8;
-            margin-bottom: 20px;
-        }
-        .tabs a {
-            padding: 15px 25px;
-            text-decoration: none;
-            color: #000;
-            border: 1px solid transparent;
-            border-radius: 5px 5px 0 0;
-            font-size: 18px;
-        }
-        .tabs a:hover {
-            background-color: #f1f8ff;
-            border-color: #e1e4e8;
-        }
-        .tab-content {
-            padding: 20px 0;
-        }
-        .repository {
-            border: 1px solid #e1e4e8;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        .repository h3 {
-            margin: 0 0 15px;
-            font-size: 28px;
-        }
-        .repository p {
-            margin-bottom: 15px;
-            color: #586069;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        footer {
-            background-color: #f5f5f5; 
-            color: #000; 
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
+        html {
+            scroll-behavior: smooth;
         }
     </style>
-
-    <!-- Google Tag Manager -->
-    <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PX8XRXQH');
-    </script>
-    <!-- End Google Tag Manager -->
-
 </head>
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX8XRXQH"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <div class="header">
-        Vasilis Pinis
+    <div class="navbar">
+        <div class="name">
+            <h1>Vasilis Pinis</h1>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shadows">Shadows Are Alive</a></li>
+                <li><a href="#projects">Personal Projects</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="profile-header">
-            <img src="https://avatars.githubusercontent.com/u/102414151?v=4" alt="Avatar" class="avatar" width="150" height="150">
-            <div class="profile-info">
-                <h1>Vasilis Pinis</h1>
-                <p>Software Developer | Bachelor of Science in Computer Programming and Games Development</p>
-            </div>
+    <section id="about" class="intro">
+        <div class="intro-img">
+            <img src="https://avatars.githubusercontent.com/u/102414151?v=4" alt="Vasilis Pinis" />
         </div>
-        <div class="tabs">
-            <a href="index.html">About</a>
-            <a href="projects.html">Games</a>
-            <a href="UnityTools.html">Unity Tools</a>
-            <a href="ProgrammingProjects.html">Programming Projects</a>
-            <a href="socials.html">Contact</a>
+        <div class="intro-text">
+            <h2>Hello there! I'm <span class="highlight">Vasilis Pinis</span></h2>
+            <h3>I work on:</h3>
+            <p id="dynamic-text"></p>
+        </div>
+    </section>
+
+    <script>
+        const phrases = ["Software Projects", "Games", "Web Development", "AR Experiences", "Mobile Apps"];
+        let i = 0;
+        function changeText() {
+            document.getElementById("dynamic-text").textContent = phrases[i];
+            i = (i + 1) % phrases.length;
+        }
+        setInterval(changeText, 1000);
+    </script>
+
+    <section id="shadows" class="about-game">
+        <h2 class="about-title">About me</h2>
+        <p class="about-text">
+            I'm a Computer Programming and Games Development graduate from Middlesex University, holding a Bachelor of Science degree. I've been creating games and software projects since I was 16, constantly exploring new technologies and creative ideas. My goal has always been to bring fun, depth and purpose into everything I build.
+        </p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="shadows" class="about-game">
+        <h2 class="about-title">Shadows Are Alive</h2>
+        <p class="about-text">
+            Dive into a world where suspense meets adventure! In <strong>Shadows Are Alive</strong>, players navigate a chilling landscape, uncovering dark secrets and battling eerie creatures. With procedurally generated environments, every playthrough offers a unique experience, challenging even the bravest players. Join friends online and face your fears together!
+        </p>
+    </section>
+
+    <section class="screenshots">
+        <div class="image-gallery">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_0edaad685e9b9934381fdc38e28848c4f1b53afc.600x338.jpg" alt="Gameplay Screenshot 1">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_7e005e7842e9967d308b2657972f1e951754616f.600x338.jpg" alt="Gameplay Screenshot 2">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_571da83bbe4d12438120e47dcfb9fded758e1b51.600x338.jpg" alt="Gameplay Screenshot 3">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_706478f6ca9a2ff52b6364e4f707bee349157aa8.600x338.jpg" alt="Gameplay Screenshot 4">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_49ec581b87493e27f977befac8130f4564e7f446.600x338.jpg" alt="Gameplay Screenshot 5">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2554930/ss_5adc7dd8e2d5aa3e6cf24e63be62bf8c77eccec1.600x338.jpg" alt="Gameplay Screenshot 6">
+        </div>
+    </section>
+
+    <div class="steam-logo">
+        <a href="https://store.steampowered.com/app/2554930/Shadows_Are_Alive/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam Logo" />
+        </a>
+    </div>
+
+    <hr class="section-divider">
+
+    <section id="projects" class="screenshots">
+        <section class="about-game">
+            <h2 class="about-title">Personal Projects</h2>
+            <p class="about-text">
+                A collection of personal projects developed during my time as a Computer Science student and in my free time. These works reflect my passion for game development, AR experiences, and building useful tools with Unity and web technologies. Each project helped me grow my skills, experiment creatively, and push the boundaries of what I could build solo.
+            </p>
+        </section>
+        <div class="image-gallery horizontal-scroll">
+            <img src="https://img.itch.zone/aW1nLzE4MjY1MjE3LnBuZw==/315x250%23c/5q2xeV.png" alt="Virtual Relics (AR)" data-link="https://itchiovp.itch.io/virtual-relics-ar">
+            <img src="https://img.itch.zone/aW1nLzE1MjQ4MTc5LnBuZw==/315x250%23c/M5U90t.png" alt="Blend In" data-link="https://itchiovp.itch.io/blend-in">
+            <img src="https://img.itch.zone/aW1nLzE3ODYwOTkzLnBuZw==/315x250%23c/%2FACQZJ.png" alt="Agents Rush" data-link="https://itchiovp.itch.io/agents-rush">
+            <img src="https://img.itch.zone/aW1nLzE4MDEyOTg5LnBuZw==/315x250%23c/GP58Tz.png" alt="Number Navigators" data-link="https://itchiovp.itch.io/number-navigators">
+            <img src="https://img.itch.zone/aW1nLzE1MTg5Njk1LnBuZw==/315x250%23c/qY7bF7.png" alt="Unity Console During Run Time Tool" data-link="https://itchiovp.itch.io/unity-console-during-run-time-tool">
+            <img src="https://img.itch.zone/aW1nLzE1MTg5Njc0LnBuZw==/315x250%23c/IzCy16.png" alt="2.5D Unity 3D Free to use Dialogue System" data-link="https://itchiovp.itch.io/25d-unity-3d-free-to-use-dialogue-system">
+            <img src="https://img.itch.zone/aW1nLzE0OTE2NDM2LnBuZw==/315x250%23c/JdHkSC.png" alt="Dungeon Slasher" data-link="https://itchiovp.itch.io/dungeon-slasher">
+            <img src="https://img.itch.zone/aW1nLzE0OTQxMTk3LnBuZw==/315x250%23c/Ahhnko.png" alt="Netcode Chat System Between Users" data-link="https://itchiovp.itch.io/netcode-chat-system-between-users">
+            <img src="https://img.itch.zone/aW1nLzE0NTQwNTM4LnBuZw==/315x250%23c/WOAREv.png" alt="Prefab Spawner Unity Tool" data-link="https://itchiovp.itch.io/prefab-spawner-unity-tool">
+            <img src="https://img.itch.zone/aW1nLzE1MjcyOTkzLnBuZw==/315x250%23c/GVNnTG.png" alt="Unity Player Changer Tool(Cinemachine)" data-link="https://itchiovp.itch.io/unity-player-changer-toolcinemachine">
+            <img src="https://img.itch.zone/aW1nLzEzODgyNzAzLnBuZw==/315x250%23c/13uaFE.png" alt="Classroom of the Elite Visual Novel(Fan Made)-Android" data-link="https://itchiovp.itch.io/classroom-of-the-elite-visual-novelfan-made-android">
+            <img src="https://img.itch.zone/aW1nLzEzODgyODU4LnBuZw==/315x250%23c/GkNiQd.png" alt="Alv's Bakery Visual Novel(Android)" data-link="https://itchiovp.itch.io/alvs-bakery-visual-novelandroid">
+            <img src="https://img.itch.zone/aW1nLzEzODgzMDc4LnBuZw==/315x250%23c/3yLzYu.png" alt="Card Guess Game" data-link="https://itchiovp.itch.io/card-guess-game">
+            <img src="https://img.itch.zone/aW1nLzE0NTQ1NDI4LnBuZw==/315x250%23c/PoTZdW.png" alt="Number Guess Game" data-link="https://itchiovp.itch.io/number-guess-game">
+            <img src="https://img.itch.zone/aW1nLzE1ODA5MjI3LnBuZw==/315x250%23c/oxeq56.png" alt="Football Lineup Builder" data-link="https://itchiovp.itch.io/football-lineup-builder">
+            <img src="https://img.itch.zone/aW1nLzE0OTE2NDMxLnBuZw==/315x250%23c/idaHBZ.png" alt="Govenors" data-link="https://itchiovp.itch.io/govenors">
+            <img src="https://img.itch.zone/aW1nLzE0NzYzODIxLnBuZw==/315x250%23c/j4ZmC2.png" alt="Boxing Round Interval Android Application" data-link="https://itchiovp.itch.io/boxing-round-interval-android-application">
+            <img src="https://img.itch.zone/aW1nLzE0OTE2MjQ1LnBuZw==/315x250%23c/oEi6hT.png" alt="Game View Screenshot Taker Unity Tool" data-link="https://itchiovp.itch.io/game-view-screenshot-taker-unity-tool">
+            <img src="https://img.itch.zone/aW1nLzE0NTU1NjMyLnBuZw==/315x250%23c/Z6oOdp.png" alt="Godfather Card Guess Game" data-link="https://itchiovp.itch.io/godfather-card-guess-game">
+            <img src="https://img.itch.zone/aW1nLzE0MzE0OTk3LnBuZw==/315x250%23c/xdqVw%2F.png" alt="Medieval Soldiers" data-link="https://itchiovp.itch.io/medieval-soldiers">
+            <img src="https://img.itch.zone/aW1nLzE1MzkzNzIwLnBuZw==/315x250%23c/OnOby6.png" alt="Wheel of Names" data-link="https://itchiovp.itch.io/wheel-of-names">
+            <img src="https://img.itch.zone/aW1nLzE3MTcwMjE1LnBuZw==/315x250%23c/%2FB1d2F.png" alt="Nickname Chat Android" data-link="https://itchiovp.itch.io/nickname-chat-android">
+            <img src="https://img.itch.zone/aW1nLzE0NTQwNTIwLnBuZw==/315x250%23c/H%2FjfKu.png" alt="Unity-Login-Register-System-Tool" data-link="https://itchiovp.itch.io/unity-login-register-system-tool">
+            <img src="https://img.itch.zone/aW1nLzE0NTQwNDk0LnBuZw==/315x250%23c/AanYre.png" alt="Unity Login-Register Tool With XML" data-link="https://itchiovp.itch.io/unity-login-register-tool-with-xml">
+            <img src="https://img.itch.zone/aW1nLzE0NjQ1ODI3LnBuZw==/315x250%23c/7tlsf3.png" alt="Endless Horse Runner Game" data-link="https://itchiovp.itch.io/endless-horse-runner-game">
+            <img src="https://img.itch.zone/aW1nLzE2Mzc1NDkxLnBuZw==/315x250%23c/%2FtVKRZ.png" alt="Tic Tac Toe" data-link="https://itchiovp.itch.io/tic-tac-toe">
+            <img src="https://img.itch.zone/aW1nLzEzODgyOTAyLnBuZw==/315x250%23c/%2F%2Bl%2Fw2.png" alt="Space Adventures(Android)" data-link="https://itchiovp.itch.io/space-adventuresandroid">
+            <img src="https://img.itch.zone/aW1nLzE1Mzk0NTUwLnBuZw==/315x250%23c/idDzoN.png" alt="WPF Maths Guess Game" data-link="https://itchiovp.itch.io/wpf-maths-guess-game">
+            <img src="https://img.itch.zone/aW1nLzE1MzQyNjQ5LnBuZw==/315x250%23c/ABIPXe.png" alt="WPF Shop System" data-link="https://itchiovp.itch.io/wpf-shop-system">
+            <img src="https://img.itch.zone/aW1nLzE1MTU0MTYzLnBuZw==/315x250%23c/9uH%2Fo5.png" alt="WPF Boxing Round Interval Application" data-link="https://itchiovp.itch.io/wpf-boxing-round-interval-application">
         </div>
         
-        <div class="tab-content" id="about">
-            <div class="repository">
-                <h3>About Me</h3>
-                <p>I am Vasilis, an enthusiastic and dedicated developer with a strong foundation in programming languages such as C#, Python, HTML/CSS, JavaScript, and C++, and in game development using Unity.</p>
-                <p>Skilled in developing applications on various platforms including web, desktop, and games, with growing proficiency in technologies used for backend, frontend, and game development.</p>
-                <p>Skilled in problem-solving and collaborating effectively in a team environment and delivering high-quality solutions.</p>
-                <p>My academic background, with an anticipated Bachelor of Science degree from Middlesex University London, which I will receive from SAE Institute Athens in August 2024, complements my practical experience in computer games and programming.</p>
-                <p>Fluent in English and Greek, with a creative and collaborative approach to problem-solving and a passion for continuous learning and innovation.</p>
-                <p>Open to Networking & Opportunities. Please don't hesitate to get in touch with me.</p>
-            </div>
+
+    <hr class="section-divider">
+
+
+    <section id="connect" class="contact-tab">
+        <h2>Connect with Me</h2>
+        <div class="contact-tab-icons">
+            <a href="mailto:vasilhspinis@gmail.com" target="_blank">
+                <img src="https://www.freeiconspng.com/uploads/gmail-logo-icon-4.png" alt="Send me an Email">
+            </a>
+            <a href="https://www.linkedin.com/in/vasilis-pinis/" target="_blank">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-linkedin-circle-logo-icon-download-in-svg-png-gif-file-formats--social-media-pack-logos-icons-1583140.png?f=webp" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/VPVasP" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/2048px-Github-desktop-logo-symbol.svg.png" alt="GitHub">
+            </a>
+            <a href="https://itchiovp.itch.io/" target="_blank">
+                <img src="https://static-00.iconduck.com/assets.00/itch-io-icon-256x256-0aig5hor.png" alt="itch.io">
+            </a>
         </div>
-    </div>
+    </section>
 
     <footer>
-        © 2024 Vasilis Pinis. All rights reserved.
+        <p>&copy; 2025 Vasilis Pinis | All Rights Reserved</p>
     </footer>
 
+    <script src="JavaScript.js"></script>
 </body>
 </html>
