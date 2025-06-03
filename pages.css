@@ -569,16 +569,13 @@ footer a:hover {
     text-align: center;
     margin-top: 20px;
   }
-@media (max-width: 768px) {
-  .desktop-only {
-    display: none;
-  }
-}
-  .thesis-desktop {
-    display: none;
-  }
-}
-}
-    }
 
+  .desktop-only {
+    display: none !important;
+  }
+
+  .thesis-desktop {
+    display: none !important;
+  }
+}
 
