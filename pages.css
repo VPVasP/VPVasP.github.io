@@ -464,10 +464,55 @@ footer a:hover {
         padding: 0 10px;
     }
 
-    .thesis-section iframe {
-        height: 400px;
-        width: 100%;
-    }
+
+/* Hide mobile buttons by default */
+.thesis-mobile-buttons {
+  display: none;
 }
 
+/* Desktop PDF display */
+.thesis-desktop iframe {
+  max-width: 90vw;
+  height: 600px;
+  border: none;
+  display: block;
+  margin: 0 auto;
 }
+
+/* Button styling */
+.thesis-button {
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.thesis-button.view {
+  background-color: #00ffcc;
+  color: #000;
+}
+
+.thesis-button.download {
+  background-color: #ff007f;
+  color: #fff;
+}
+
+/* SHOW buttons only on mobile (max 768px width) */
+@media (max-width: 768px) {
+  .thesis-mobile-buttons {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .thesis-desktop {
+    display: none;
+  }
+}
+}
+    }
+
+
