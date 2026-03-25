@@ -92,3 +92,41 @@ canvas {
 .visit-btn:hover {
   background-color: #2ea043;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number] {
+    position: relative;
+    padding-right: 30px;
+}
+
+input[type=number]::after,
+input[type=number]::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    pointer-events: none;
+}
+
+input[type=number]::before {
+    border-left: 2px solid #8b949e;
+    border-bottom: 2px solid #8b949e;
+    transform: rotate(45deg);
+    top: 10px; /* up arrow */
+}
+
+input[type=number]::after {
+    border-left: 2px solid #8b949e;
+    border-bottom: 2px solid #8b949e;
+    transform: rotate(-135deg);
+    bottom: 10px; /* down arrow */
+}
