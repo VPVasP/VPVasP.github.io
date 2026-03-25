@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>S&P 500 Investment Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>S&P 500 Investment Simulator</h1>
+    <p class="subtitle">Calculate future value based on monthly investing</p>
+
+    <div class="form">
+        <label>Monthly Investment (€)</label>
+        <input type="number" id="monthly" value="250">
+
+        <label>Years</label>
+        <input type="number" id="years" value="10">
+
+        <label>Expected Annual Return (%)</label>
+        <input type="number" id="returnRate" value="8">
+
+        <button id="calculate" class="calculate-btn">Calculate</button>
+    </div>
+
+    <div class="results">
+        <h2>Results</h2>
+        <p>Total Contributions: <span id="contributions">-</span></p>
+        <p>Future Value: <span id="futureValue">-</span></p>
+        <p>Total Profit: <span id="profit">-</span></p>
+    </div>
+
+    <canvas id="chart"></canvas>
+</div>
+
+<footer class="footer-section">
+    <p>&copy; 2026 Vasilis Pinis | All Rights Reserved</p>
+    <a href="https://vpvasp.github.io/" target="_blank" class="visit-btn">Visit My Website</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
