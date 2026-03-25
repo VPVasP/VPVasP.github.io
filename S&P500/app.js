@@ -2,10 +2,9 @@ let chart;
 
 function formatEuro(num) {
     return num
-        .toFixed(0) 
-        .replace(/\B(?=(\d{3})+(?!\d))/g, "."); 
+        .toFixed(0)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
-
 
 function calculateFutureValue(monthly, years, rate) {
     const months = years * 12;
@@ -20,7 +19,6 @@ function calculateFutureValue(monthly, years, rate) {
         contributions += monthly;
         futureValue = (futureValue + monthly) * (1 + monthlyRate);
 
-        // Push data once per year
         if (i % 12 === 0) {
             chartData.push({
                 year: i / 12,
@@ -31,6 +29,27 @@ function calculateFutureValue(monthly, years, rate) {
 
     return { futureValue, contributions, chartData };
 }
+
+// NEW: Auto-set return rate based on selected asset
+const assetSelect = document.getElementById("assetSelect");
+const returnRateInput = document.getElementById("returnRate");
+
+assetSelect.addEventListener("change", () => {
+    switch (assetSelect.value) {
+        case "sp500":
+            returnRateInput.value = 10;
+            break;
+        case "nasdaq":
+            returnRateInput.value = 13;
+            break;
+        case "dowjones":
+            returnRateInput.value = 7;
+            break;
+        case "bitcoin":
+            returnRateInput.value = 40;
+            break;
+    }
+});
 
 document.getElementById("calculate").addEventListener("click", () => {
     const monthly = parseFloat(document.getElementById("monthly").value);
@@ -77,8 +96,8 @@ function drawChart(data) {
                     ticks: {
                         callback: function(value) {
                             return value
-                                .toFixed(0)                   
-                                .replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €"; 
+                                .toFixed(0)
+                                .replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";
                         }
                     }
                 }

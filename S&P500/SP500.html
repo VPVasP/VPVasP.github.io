@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9583865220854918"
+     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <title>S&P 500 Investment Simulator</title>
+    <title>Investment Simulator</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <h1>S&P 500 Investment Simulator</h1>
+    <h1>Investment Simulator</h1>
     <p class="subtitle">Calculate future value based on monthly investing</p>
-
+<label>Choose Asset</label>
+<select id="assetSelect">
+    <option value="sp500">S&P 500</option>
+    <option value="nasdaq">NASDAQ 100</option>
+    <option value="dowjones">Dow Jones</option>
+    <option value="bitcoin">Bitcoin</option>
+</select>
     <div class="form">
         <label>Monthly Investment (€)</label>
         <input type="number" id="monthly" value="250">
@@ -34,11 +42,13 @@
 
     <canvas id="chart"></canvas>
 </div>
-
 <footer class="footer-section">
     <p>&copy; 2026 Vasilis Pinis | All Rights Reserved</p>
     <a href="https://vpvasp.github.io/" target="_blank" class="visit-btn">Visit My Website</a>
+    <p class="market-note">Values are based on market prices as of 25/03/2026</p>
 </footer>
+
+
 
 <script src="app.js"></script>
 </body>
