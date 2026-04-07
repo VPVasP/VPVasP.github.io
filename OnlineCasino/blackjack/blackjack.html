@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blackjack Suite — Bellagio Gold</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="blackjack.css" />
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="bj-header">
+    <a href="../index.html" class="back-btn">← Lobby</a>
+    <div class="bj-logo">
+      <span>♠</span> BLACKJACK SUITE
+    </div>
+    <div class="bj-header-right">
+      <div class="bj-balance-pill">
+        <span class="bal-label">Balance</span>
+        <span id="bjBalance">$5,000.00</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABLE -->
+  <div class="bj-table">
+
+    <!-- SHOE INDICATOR -->
+    <div class="shoe-row">
+      <span class="shoe-label">🃏 6-Deck Shoe</span>
+      <span class="shoe-cards" id="shoeCards">312 cards remaining</span>
+    </div>
+
+    <!-- DEALER AREA -->
+    <div class="bj-dealer-area">
+      <div class="area-label">Dealer</div>
+      <div class="dealer-hand" id="dealerHand"></div>
+      <div class="hand-value" id="dealerValue"></div>
+    </div>
+
+    <!-- RESULT BANNER -->
+    <div class="result-banner" id="resultBanner" style="display:none"></div>
+
+    <!-- PLAYER AREA -->
+    <div class="bj-player-area">
+      <div class="player-hand" id="playerHand"></div>
+      <div class="hand-value" id="playerValue"></div>
+      <div class="area-label">Your Hand</div>
+    </div>
+
+    <!-- CHIP & BET ROW -->
+    <div class="bet-controls" id="betControls">
+      <div class="chip-row">
+        <button class="chip" data-val="5"  onclick="selectChip(5)">$5</button>
+        <button class="chip" data-val="10" onclick="selectChip(10)">$10</button>
+        <button class="chip" data-val="25" onclick="selectChip(25)">$25</button>
+        <button class="chip" data-val="50" onclick="selectChip(50)">$50</button>
+        <button class="chip" data-val="100" onclick="selectChip(100)">$100</button>
+        <button class="chip" data-val="500" onclick="selectChip(500)">$500</button>
+      </div>
+      <div class="current-bet-row">
+        <div class="bet-display">
+          <span class="bet-label">Current Bet</span>
+          <span id="currentBetDisplay">$0</span>
+        </div>
+        <div class="bet-actions">
+          <button class="btn-clear" onclick="clearBet()">Clear</button>
+          <button class="btn-repeat" id="repeatBtn" onclick="repeatBet()" disabled>↩ Repeat</button>
+          <button class="btn-deal" id="dealBtn" onclick="deal()" disabled>Deal →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME ACTIONS -->
+    <div class="game-actions" id="gameActions" style="display:none">
+      <button class="action-btn btn-hit"    id="hitBtn"     onclick="hit()">Hit</button>
+      <button class="action-btn btn-stand"  id="standBtn"   onclick="stand()">Stand</button>
+      <button class="action-btn btn-double" id="doubleBtn"  onclick="doubleDown()">Double</button>
+      <button class="action-btn btn-split"  id="splitBtn"   onclick="split()" disabled>Split</button>
+    </div>
+
+    <!-- STATS -->
+    <div class="bj-stats">
+      <div class="stat-item"><span class="stat-val" id="statWins">0</span><span class="stat-lbl">Wins</span></div>
+      <div class="stat-item"><span class="stat-val" id="statLosses">0</span><span class="stat-lbl">Losses</span></div>
+      <div class="stat-item"><span class="stat-val" id="statPushes">0</span><span class="stat-lbl">Pushes</span></div>
+      <div class="stat-item"><span class="stat-val" id="statBJs">0</span><span class="stat-lbl">Blackjacks</span></div>
+    </div>
+
+  </div>
+
+  <!-- PAYTABLE SIDE -->
+  <div class="paytable-side">
+    <div class="paytable-title">Paytable</div>
+    <div class="paytable-row"><span>Blackjack</span><span class="pay-odds gold">3:2</span></div>
+    <div class="paytable-row"><span>Win</span><span class="pay-odds">1:1</span></div>
+    <div class="paytable-row"><span>Insurance</span><span class="pay-odds">2:1</span></div>
+    <div class="paytable-row"><span>Push</span><span class="pay-odds muted">Returned</span></div>
+    <div class="paytable-divider"></div>
+    <div class="paytable-title" style="font-size:0.75rem;margin-top:12px">Rules</div>
+    <div class="paytable-rule">Dealer hits soft 17</div>
+    <div class="paytable-rule">Double on any 2 cards</div>
+    <div class="paytable-rule">Split pairs allowed</div>
+    <div class="paytable-rule">No hole card insurance</div>
+  </div>
+
+  <script src="blackjack.js"></script>
+</body>
+</html>

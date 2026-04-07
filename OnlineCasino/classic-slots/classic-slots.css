@@ -1,0 +1,382 @@
+/* ============================================
+   MEGA STRIP SLOTS – BELLAGIO GOLD EDITION
+   FULL PREMIUM UI STYLESHEET
+   ============================================ */
+
+:root {
+  --gold: #f5d28b;
+  --gold-strong: #ffdf8a;
+  --gold-deep: #b58a3a;
+  --text: #f8f5ec;
+  --muted: #b3a58a;
+  --border-gold: rgba(245, 210, 139, 0.6);
+  --panel-bg: rgba(0, 0, 0, 0.55);
+  --panel-bg-strong: rgba(0, 0, 0, 0.75);
+  --marble-dark: radial-gradient(circle at top, #111 0, #050505 40%, #000 100%);
+}
+
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--marble-dark);
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* PARTICLES */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+/* ============================================
+   TOP BAR
+   ============================================ */
+
+.topbar {
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid var(--border-gold);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+.logo {
+  font-size: 1.4rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+  text-shadow: 0 0 18px rgba(245,210,139,0.9);
+}
+
+.balance-box {
+  font-size: 1rem;
+  color: var(--gold-strong);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 10px rgba(245,210,139,0.6);
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.12em;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #3b2a12, var(--gold-deep));
+  color: #111;
+  box-shadow: 0 0 18px rgba(245,210,139,0.7);
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.slot-wrapper {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 40px;
+  padding: 40px 50px;
+}
+
+/* ============================================
+   SLOT MACHINE PANEL
+   ============================================ */
+
+.slot-machine {
+  background: var(--panel-bg-strong);
+  border-radius: 22px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  padding: 28px 32px;
+  backdrop-filter: blur(12px);
+}
+
+/* HEADER */
+.slot-header h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+  text-shadow: 0 0 18px rgba(245,210,139,0.9);
+}
+
+.slot-header p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   REELS FRAME
+   ============================================ */
+
+.reels-frame {
+  margin-top: 22px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border-gold);
+  background: radial-gradient(circle at top, rgba(245,210,139,0.15), rgba(0,0,0,0.9));
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+}
+
+.reels {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  height: 210px;
+}
+
+.reel {
+  background: rgba(0,0,0,0.7);
+  border-radius: 14px;
+  border: 1px solid rgba(245,210,139,0.4);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+.reel-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.symbol-cell {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: var(--gold-strong);
+  text-shadow: 0 0 14px rgba(245,210,139,0.9);
+}
+
+/* ============================================
+   BET PANEL – PREMIUM GOLD
+   ============================================ */
+
+.bet-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  box-shadow: 0 0 22px rgba(245,210,139,0.15);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.bet-row::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  bottom: 12px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--border-gold), transparent);
+  opacity: 0.4;
+}
+
+.bet-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 110px;
+}
+
+.bet-group label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.bet-group span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-strong);
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 14px rgba(245,210,139,0.7);
+}
+
+/* BET BUTTONS */
+.bet-btn {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 4px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px;
+  font-size: 1.1rem;
+  transition: 0.2s;
+}
+
+.bet-btn:hover {
+  background: linear-gradient(135deg, #3b2a12, var(--gold-deep));
+  color: #111;
+  box-shadow: 0 0 14px rgba(245,210,139,0.7);
+  transform: scale(1.12);
+}
+
+/* ============================================
+   SPIN + AUTO BUTTONS
+   ============================================ */
+
+.buttons-row {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.spin-btn,
+.auto-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-gold);
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.spin-btn {
+  background: linear-gradient(135deg, #3b2a12, var(--gold-deep));
+  color: #111;
+  box-shadow: 0 0 18px rgba(245,210,139,0.4);
+}
+
+.spin-btn:hover {
+  box-shadow: 0 0 26px rgba(245,210,139,0.9);
+  transform: scale(1.05);
+}
+
+.auto-btn {
+  background: rgba(0,0,0,0.7);
+  color: var(--gold);
+}
+
+.auto-btn.active {
+  background: linear-gradient(135deg, #3b2a12, var(--gold-deep));
+  color: #111;
+  box-shadow: 0 0 18px rgba(245,210,139,0.7);
+}
+
+/* ============================================
+   STATUS + FREE SPINS
+   ============================================ */
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.free-spins {
+  color: var(--gold-strong);
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(245,210,139,0.7);
+}
+
+/* ============================================
+   PAYTABLE
+   ============================================ */
+
+.paytable {
+  background: var(--panel-bg-strong);
+  border-radius: 20px;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
+
+.paytable h2 {
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-strong);
+  margin-bottom: 14px;
+  text-shadow: 0 0 14px rgba(245,210,139,0.7);
+}
+
+.paytable ul {
+  list-style: none;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================================
+   BIG WIN OVERLAY
+   ============================================ */
+
+.big-win-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(0,0,0,0.9), rgba(0,0,0,0.95));
+  z-index: 10;
+}
+
+.big-win-overlay.active {
+  display: flex;
+}
+
+.big-win-box {
+  text-align: center;
+  color: var(--gold-strong);
+  text-shadow: 0 0 22px rgba(245,210,139,0.9);
+}
+
+.big-win-box h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  letter-spacing: 0.18em;
+}
+
+.big-win-box p {
+  font-size: 1.3rem;
+}
+
+/* GOLD FLASH ON BIG WIN */
+.reels-frame.big-win {
+  animation: goldFlash 0.6s ease-in-out 3;
+}
+
+@keyframes goldFlash {
+  0%, 100% { box-shadow: 0 0 14px rgba(245,210,139,0.3); }
+  50% { box-shadow: 0 0 40px rgba(245,210,139,1); }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crash Rocket — Bellagio Gold</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="crash.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="cr-header">
+    <a href="../index.html" class="back-btn">← Lobby</a>
+    <div class="cr-logo">🚀 CRASH ROCKET</div>
+    <div class="cr-header-right">
+      <div class="cr-balance-pill">
+        <span class="bal-lbl">Balance</span>
+        <span id="crBalance">$5,000.00</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="cr-layout">
+
+    <!-- MAIN GAME AREA -->
+    <div class="cr-main">
+
+      <!-- MULTIPLIER GRAPH -->
+      <div class="graph-wrap">
+        <canvas id="crashCanvas"></canvas>
+        <div class="multiplier-display" id="multiplierDisplay">
+          <span id="multValue">1.00×</span>
+          <span id="multStatus" class="mult-status">Waiting…</span>
+        </div>
+        <div class="crash-overlay" id="crashOverlay" style="display:none">
+          <div class="crash-overlay-inner">
+            <div class="crash-icon">💥</div>
+            <div class="crash-val" id="crashAtVal">CRASHED @ 2.14×</div>
+            <div class="crash-next" id="crashNext">Next round in <span id="countdown">5</span>s</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BET CONTROLS -->
+      <div class="bet-panel" id="betPanel">
+        <div class="bet-panel-inner">
+          <div class="bet-field-group">
+            <label>Bet Amount</label>
+            <div class="bet-input-row">
+              <button class="bet-quick" onclick="setBetAmount(10)">$10</button>
+              <button class="bet-quick" onclick="setBetAmount(25)">$25</button>
+              <button class="bet-quick" onclick="setBetAmount(50)">$50</button>
+              <button class="bet-quick" onclick="setBetAmount(100)">$100</button>
+              <div class="bet-input-wrap">
+                <span>$</span>
+                <input type="number" id="betAmount" value="10" min="1" onchange="updatePotential()" />
+              </div>
+              <button class="bet-half" onclick="halfBet()">½</button>
+              <button class="bet-double" onclick="doubleBet()">2×</button>
+            </div>
+          </div>
+
+          <div class="bet-field-group">
+            <label>Auto Cash Out</label>
+            <div class="autocash-row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="autoCashToggle" onchange="toggleAutoCash()" />
+                <span class="toggle-slider"></span>
+              </label>
+              <div class="autocash-input-wrap" id="autoCashWrap" style="opacity:0.4;pointer-events:none">
+                <input type="number" id="autoCashVal" value="2.00" min="1.01" step="0.01" placeholder="2.00×" />
+                <span>×</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bet-main-btn-row">
+            <button class="btn-place-bet" id="placeBetBtn" onclick="placeBet()">Place Bet</button>
+            <button class="btn-cash-out" id="cashOutBtn" onclick="cashOut()" style="display:none">
+              💰 Cash Out <span id="cashOutAmt">$0.00</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="cr-sidebar">
+
+      <!-- Live Players -->
+      <div class="sidebar-panel">
+        <div class="sidebar-panel-title">🟢 Live Bets</div>
+        <div class="live-bets-list" id="liveBetsList"></div>
+      </div>
+
+      <!-- History -->
+      <div class="sidebar-panel">
+        <div class="sidebar-panel-title">📊 Recent Rounds</div>
+        <div class="history-grid" id="historyGrid"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="sidebar-panel">
+        <div class="sidebar-panel-title">📈 My Stats</div>
+        <div class="my-stats">
+          <div class="ms-row"><span>Total Bet</span><span id="msTotalBet">$0</span></div>
+          <div class="ms-row"><span>Total Won</span><span id="msTotalWon" class="green">$0</span></div>
+          <div class="ms-row"><span>Best Cashout</span><span id="msBest" class="gold">0.00×</span></div>
+          <div class="ms-row"><span>Rounds</span><span id="msRounds">0</span></div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <script src="crash.js"></script>
+</body>
+</html>

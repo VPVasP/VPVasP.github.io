@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roulette Royale – American Double Zero</title>
+  <link rel="stylesheet" href="roulette.css" />
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <header class="topbar">
+    <div class="logo">ROULETTE ROYALE</div>
+    <div class="balance-box">
+      Balance: <strong id="balance">2000</strong> credits
+    </div>
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Lobby</button>
+  </header>
+
+  <main class="roulette-wrapper">
+
+    <!-- LEFT: WHEEL -->
+    <section class="wheel-section">
+      <div class="wheel-container">
+        <div class="wheel-shadow"></div>
+        <img src="wheel-american.png" alt="Roulette Wheel" class="wheel" id="wheel" />
+        <div class="ball" id="ball"></div>
+      </div>
+      <div class="dealer-text" id="dealerText">Place your bets</div>
+      <div class="result" id="resultBox">–</div>
+    </section>
+
+    <!-- RIGHT: TABLE + RACETRACK + CHIPS -->
+    <section class="table-section">
+
+      <!-- CHIP PANEL -->
+      <div class="chip-panel">
+        <h2>Chips</h2>
+        <div class="chip-row">
+          <button class="chip" data-value="1">1</button>
+          <button class="chip" data-value="5">5</button>
+          <button class="chip" data-value="25">25</button>
+          <button class="chip" data-value="100">100</button>
+          <button class="chip" data-value="500">500</button>
+        </div>
+      </div>
+
+      <!-- RACETRACK -->
+      <div class="racetrack">
+        <h2>Racetrack</h2>
+        <div class="racetrack-row">
+          <button class="race-btn" data-group="neighbors0">0 Neighbors</button>
+          <button class="race-btn" data-group="five">5‑Number (0,00,1,2,3)</button>
+          <button class="race-btn" data-group="orphans">Orphans</button>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-panel">
+        <h2>Table</h2>
+
+        <!-- ZERO AREA -->
+        <div class="zero-row">
+          <div class="cell zero" data-type="straight" data-value="0">0</div>
+          <div class="cell zero" data-type="straight" data-value="00">00</div>
+        </div>
+
+        <!-- MAIN GRID -->
+        <div class="numbers-grid">
+          <!-- 3 columns, 12 rows -->
+          <!-- We’ll generate 1–36 via JS, but keep structure for styling -->
+          <!-- Placeholder cells for layout -->
+          <div class="col" id="col-1"></div>
+          <div class="col" id="col-2"></div>
+          <div class="col" id="col-3"></div>
+        </div>
+
+        <!-- OUTSIDE BETS -->
+        <div class="outside-row dozens">
+          <div class="outside-cell" data-type="dozen" data-value="1">1st 12</div>
+          <div class="outside-cell" data-type="dozen" data-value="2">2nd 12</div>
+          <div class="outside-cell" data-type="dozen" data-value="3">3rd 12</div>
+        </div>
+
+        <div class="outside-row">
+          <div class="outside-cell" data-type="lowhigh" data-value="low">1–18</div>
+          <div class="outside-cell" data-type="evenodd" data-value="even">Even</div>
+          <div class="outside-cell red" data-type="color" data-value="red">Red</div>
+          <div class="outside-cell black" data-type="color" data-value="black">Black</div>
+          <div class="outside-cell" data-type="evenodd" data-value="odd">Odd</div>
+          <div class="outside-cell" data-type="lowhigh" data-value="high">19–36</div>
+        </div>
+
+        <div class="outside-row columns">
+          <div class="outside-cell" data-type="column" data-value="1">2:1</div>
+          <div class="outside-cell" data-type="column" data-value="2">2:1</div>
+          <div class="outside-cell" data-type="column" data-value="3">2:1</div>
+        </div>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="controls-panel">
+        <button id="clearBetsBtn" class="control-btn secondary">Clear Bets</button>
+        <button id="spinBtn" class="control-btn primary">SPIN</button>
+      </div>
+
+      <!-- CURRENT BETS -->
+      <div class="bets-list">
+        <h3>Current Bets</h3>
+        <ul id="betsList"></ul>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SOUNDS -->
+  <audio id="spinSound" src="spin.mp3" preload="auto"></audio>
+  <audio id="ballSound" src="ball.mp3" preload="auto"></audio>
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+  <audio id="loseSound" src="lose.mp3" preload="auto"></audio>
+  <audio id="dealerNoMore" src="dealer_no_more.mp3" preload="auto"></audio>
+  <audio id="dealerPlace" src="dealer_place_bets.mp3" preload="auto"></audio>
+  <audio id="dealerWin" src="dealer_winner.mp3" preload="auto"></audio>
+
+  <script src="roulette.js"></script>
+</body>
+</html>

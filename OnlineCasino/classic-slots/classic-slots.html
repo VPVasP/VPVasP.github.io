@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mega Strip Slots – Bellagio Gold</title>
+  <link rel="stylesheet" href="classic-slots.css" />
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <header class="topbar">
+    <div class="logo">MEGA STRIP SLOTS</div>
+    <div class="balance-box">
+      Balance: <strong id="balance">2000</strong> credits
+    </div>
+    <button class="back-btn" onclick="window.location.href='../index.html'">← Lobby</button>
+  </header>
+
+  <main class="slot-wrapper">
+
+    <section class="slot-machine">
+
+      <div class="slot-header">
+        <h1>Mega Strip Slots</h1>
+        <p>5 Reels • 20 Lines • Free Spins • Big Wins</p>
+      </div>
+
+      <div class="reels-frame">
+        <div class="reels" id="reels">
+          <!-- 5 reels, each 3 visible cells -->
+          <div class="reel" data-index="0"></div>
+          <div class="reel" data-index="1"></div>
+          <div class="reel" data-index="2"></div>
+          <div class="reel" data-index="3"></div>
+          <div class="reel" data-index="4"></div>
+        </div>
+        <div class="win-lines-overlay" id="winLines"></div>
+      </div>
+
+      <div class="controls">
+
+        <div class="bet-row">
+          <div class="bet-group">
+            <label>Bet / Line</label>
+            <button class="bet-btn" id="betDown">−</button>
+            <span id="betPerLine">5</span>
+            <button class="bet-btn" id="betUp">+</button>
+          </div>
+
+          <div class="bet-group">
+            <label>Lines</label>
+            <span id="linesCount">20</span>
+          </div>
+
+          <div class="bet-group">
+            <label>Total Bet</label>
+            <span id="totalBet">100</span>
+          </div>
+        </div>
+
+        <div class="buttons-row">
+          <button id="spinBtn" class="spin-btn">SPIN</button>
+          <button id="autoBtn" class="auto-btn">AUTO</button>
+        </div>
+
+        <div class="status-row">
+          <div class="status" id="statusText">Place your bet and spin</div>
+          <div class="free-spins" id="freeSpinsBox" style="display:none;">
+            Free Spins: <span id="freeSpinsCount">0</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <aside class="paytable">
+      <h2>Paytable</h2>
+      <ul>
+        <li><strong>7</strong> – Highest paying</li>
+        <li><strong>💎</strong> – High</li>
+        <li><strong>🔔</strong> – Medium</li>
+        <li><strong>🍒</strong> – Low</li>
+        <li><strong>BAR</strong> – Low</li>
+        <li><strong>⭐</strong> – Wild (substitutes)</li>
+        <li><strong>🎰</strong> – Scatter (3+ triggers Free Spins)</li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <!-- Sounds (replace with your own files if you want) -->
+  <audio id="spinSound" src="spin.mp3" preload="auto"></audio>
+  <audio id="reelStopSound" src="reel-stop.mp3" preload="auto"></audio>
+  <audio id="winSound" src="win.mp3" preload="auto"></audio>
+  <audio id="bigWinSound" src="bigwin.mp3" preload="auto"></audio>
+
+  <script src="classic-slots.js"></script>
+</body>
+</html>

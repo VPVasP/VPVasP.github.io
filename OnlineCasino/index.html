@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellagio Gold — Premium Online Casino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- HEADER -->
+  <header class="header" id="mainHeader">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-suit">♠</span>
+        <span class="logo-word">BELLAGIO <em>GOLD</em></span>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-link active" data-page="lobby">Casino</a>
+        <a class="nav-link" data-page="sports">⚽ Sports</a>
+        <a class="nav-link" data-page="promos">Promotions</a>
+        <a class="nav-link" data-page="vip">VIP Club</a>
+      </nav>
+      <div class="header-right">
+        <div class="online-badge">
+          <span class="pulse-dot"></span>
+          <span id="onlineCount">847</span> online
+        </div>
+        <div class="balance-pill" id="balancePill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <span class="bal-label">Balance</span>
+          <span class="bal-amount" id="balanceDisplay">$5,000</span>
+        </div>
+        <button class="deposit-btn" onclick="openDeposit()">+ Deposit</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIVE WINS TICKER -->
+  <div class="ticker-bar">
+    <div class="ticker-tag">🏆 LIVE WINS</div>
+    <div class="ticker-scroll-wrap">
+      <div class="ticker-scroll" id="tickerScroll"></div>
+    </div>
+  </div>
+
+  <!-- ============ LOBBY PAGE ============ -->
+  <main class="page active" id="page-lobby">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-orbs">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-pill">⚽ Premier League • Live Odds • Real API</div>
+        <h1 class="hero-heading">Where Legends<br /><span class="gold-gradient">Place Their Bets</span></h1>
+        <p class="hero-sub">World-class casino games &amp; live Premier League betting with real odds.</p>
+        <div class="hero-cta">
+          <button class="btn-gold" onclick="navigateTo('sports')">Bet on Football</button>
+          <button class="btn-ghost" onclick="document.getElementById('gamesAnchor').scrollIntoView({behavior:'smooth'})">Casino Games ↓</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><span class="hstat-num">£2.4M</span><span class="hstat-lbl">Today's Pool</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num">38</span><span class="hstat-lbl">Live Matches</span></div>
+          <div class="hstat-sep"></div>
+          <div class="hstat"><span class="hstat-num">99.1%</span><span class="hstat-lbl">Payout Rate</span></div>
+        </div>
+      </div>
+      <div class="hero-floaters">
+        <div class="floater f1">🃏</div>
+        <div class="floater f2">⚽</div>
+        <div class="floater f3">🎰</div>
+        <div class="floater f4">💎</div>
+        <div class="floater f5">🎡</div>
+      </div>
+    </section>
+
+    <!-- PREMIER LEAGUE BANNER -->
+    <section class="pl-banner">
+      <div class="section-wrap">
+        <div class="pl-card" onclick="navigateTo('sports')">
+          <div class="pl-card-left">
+            <div class="pl-icon">⚽</div>
+            <div class="pl-text">
+              <div class="pl-title">Premier League Live Betting</div>
+              <div class="pl-sub">Real-time odds • In-play markets • Best prices guaranteed</div>
+            </div>
+          </div>
+          <div class="pl-fixtures" id="plFixtures">
+            <div class="fixture-loading">Fetching live fixtures…</div>
+          </div>
+          <div class="pl-card-right">
+            <button class="btn-gold-sm">Bet Now →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GAMES GRID -->
+    <section class="games-section" id="gamesAnchor">
+      <div class="section-wrap">
+        <div class="section-top">
+          <h2 class="section-heading">Casino Games</h2>
+          <div class="filter-row" id="filterRow">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="slots">Slots</button>
+            <button class="filter-btn" data-filter="table">Table</button>
+            <button class="filter-btn" data-filter="crash">Crash</button>
+            <button class="filter-btn" data-filter="sports">Sports</button>
+          </div>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid">
+
+          <div class="gcard" data-cat="table" onclick="go('blackjack/blackjack.html')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img bj-bg">
+              <span class="gcard-emoji">🃏</span>
+              <span class="gcard-badge badge-hot">HOT</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Blackjack Suite</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">RTP 99.5%</span>
+                <span class="gcard-live">🟢 521 playing</span>
+              </div>
+              <div class="gcard-jackpot">Max Win <strong>$250,000</strong></div>
+            </div>
+          </div>
+
+          <div class="gcard" data-cat="slots" onclick="go('classic-slots/classic-slots.html')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img slots-bg">
+              <span class="gcard-emoji">🎰</span>
+              <span class="gcard-badge badge-hot">HOT</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Classic Strip Slots</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">RTP 96.5%</span>
+                <span class="gcard-live">🟢 342 playing</span>
+              </div>
+              <div class="gcard-jackpot">Jackpot <strong id="slotsJackpot">$48,320</strong></div>
+            </div>
+          </div>
+
+          <div class="gcard" data-cat="table" onclick="go('roulete-royale/roulettte.html')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img rl-bg">
+              <span class="gcard-emoji">🎡</span>
+              <span class="gcard-badge badge-live">LIVE</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Roulette Royale</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">RTP 97.3%</span>
+                <span class="gcard-live">🟢 189 playing</span>
+              </div>
+              <div class="gcard-jackpot">Max Win <strong>35×</strong></div>
+            </div>
+          </div>
+
+          <div class="gcard" data-cat="crash" onclick="go('crash-game/crash.html')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img crash-bg">
+              <span class="gcard-emoji">🚀</span>
+              <span class="gcard-badge badge-hot">HOT</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Crash Rocket</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">RTP 97.0%</span>
+                <span class="gcard-live">🟢 738 playing</span>
+              </div>
+              <div class="gcard-jackpot">Last Round <strong id="lastCrash">4.72×</strong></div>
+            </div>
+          </div>
+
+          <div class="gcard sports-gcard" data-cat="sports" onclick="navigateTo('sports')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img spt-bg">
+              <span class="gcard-emoji">⚽</span>
+              <span class="gcard-badge badge-live">LIVE</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Premier League</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">Real Odds API</span>
+                <span class="gcard-live">🟢 Live Markets</span>
+              </div>
+              <div class="gcard-jackpot">Returns up to <strong>100×</strong></div>
+            </div>
+          </div>
+
+          <div class="gcard" data-cat="slots" onclick="go('classic-slots/classic-slots.html')">
+            <div class="gcard-glow"></div>
+            <div class="gcard-img mega-bg">
+              <span class="gcard-emoji">💰</span>
+              <span class="gcard-badge badge-vip">VIP</span>
+            </div>
+            <div class="gcard-body">
+              <div class="gcard-name">Mega Strip Slots</div>
+              <div class="gcard-meta">
+                <span class="gcard-rtp">RTP 95.8%</span>
+                <span class="gcard-live">🟢 264 playing</span>
+              </div>
+              <div class="gcard-jackpot">Jackpot <strong>$128,750</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMOS STRIP -->
+    <section class="promo-strip-section">
+      <div class="section-wrap">
+        <div class="promo-strip">
+          <div class="promo-item">
+            <span class="promo-ico">🎁</span>
+            <div class="promo-info">
+              <div class="promo-name">Welcome Bonus</div>
+              <div class="promo-detail">100% match up to $500 on first deposit</div>
+            </div>
+            <button class="btn-gold-sm" onclick="openDeposit()">Claim</button>
+          </div>
+          <div class="promo-divider"></div>
+          <div class="promo-item">
+            <span class="promo-ico">⚽</span>
+            <div class="promo-info">
+              <div class="promo-name">Football Free Bet</div>
+              <div class="promo-detail">$10 free bet on any Premier League match</div>
+            </div>
+            <button class="btn-gold-sm" onclick="navigateTo('sports')">Claim</button>
+          </div>
+          <div class="promo-divider"></div>
+          <div class="promo-item">
+            <span class="promo-ico">👑</span>
+            <div class="promo-info">
+              <div class="promo-name">VIP Cashback</div>
+              <div class="promo-detail">Weekly 15% cashback for VIP members</div>
+            </div>
+            <button class="btn-gold-sm" onclick="navigateTo('vip')">Join VIP</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ SPORTS PAGE ============ -->
+  <main class="page" id="page-sports">
+    <div class="sport-redirect">
+      <div class="redirect-inner">
+        <div class="redirect-spinner"></div>
+        <p>Loading Premier League Betting...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ PROMOS PAGE ============ -->
+  <main class="page" id="page-promos">
+    <section class="inner-section">
+      <div class="section-wrap">
+        <h2 class="section-heading">Promotions</h2>
+        <div class="promo-full">
+          <div class="promo-full-card">
+            <div class="pfc-icon">🎁</div>
+            <h3>Welcome Bonus</h3>
+            <p>Get 100% match bonus up to $500 on your first deposit. Use code: <strong>BELLAGIO500</strong></p>
+            <button class="btn-gold" onclick="openDeposit()">Deposit Now</button>
+          </div>
+          <div class="promo-full-card">
+            <div class="pfc-icon">⚽</div>
+            <h3>Football Friday</h3>
+            <p>Every Friday get $10 free bet on any Premier League match. No wagering required.</p>
+            <button class="btn-gold" onclick="navigateTo('sports')">Bet Now</button>
+          </div>
+          <div class="promo-full-card">
+            <div class="pfc-icon">🎰</div>
+            <h3>Slots Sunday</h3>
+            <p>Every Sunday get 50 free spins on Classic Strip Slots. Winnings paid as real cash.</p>
+            <button class="btn-gold" onclick="go('classic-slots/classic-slots.html')">Play Slots</button>
+          </div>
+          <div class="promo-full-card">
+            <div class="pfc-icon">👑</div>
+            <h3>VIP Loyalty</h3>
+            <p>Earn points on every bet. Redeem for cash, free bets, or exclusive luxury experiences.</p>
+            <button class="btn-gold" onclick="navigateTo('vip')">Join VIP</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ VIP PAGE ============ -->
+  <main class="page" id="page-vip">
+    <section class="inner-section">
+      <div class="section-wrap">
+        <div class="vip-hero-block">
+          <div class="vip-crown-emoji">👑</div>
+          <h2 class="section-heading gold-gradient">VIP Club</h2>
+          <p class="vip-tagline">Exclusive rewards for our most valued players</p>
+        </div>
+        <div class="vip-tiers">
+          <div class="tier-card tier-silver">
+            <div class="tier-icon">🥈</div>
+            <div class="tier-name">Silver</div>
+            <div class="tier-req">$1,000 wagered</div>
+            <ul class="tier-perks">
+              <li>5% weekly cashback</li>
+              <li>Priority support</li>
+              <li>Birthday bonus</li>
+            </ul>
+            <button class="btn-ghost">Activate</button>
+          </div>
+          <div class="tier-card tier-gold popular">
+            <div class="tier-popular-badge">MOST POPULAR</div>
+            <div class="tier-icon">🥇</div>
+            <div class="tier-name gold-gradient">Gold</div>
+            <div class="tier-req">$10,000 wagered</div>
+            <ul class="tier-perks">
+              <li>10% weekly cashback</li>
+              <li>Dedicated account manager</li>
+              <li>Monthly free bets</li>
+              <li>Exclusive tournaments</li>
+            </ul>
+            <button class="btn-gold">Activate</button>
+          </div>
+          <div class="tier-card tier-diamond">
+            <div class="tier-icon">💎</div>
+            <div class="tier-name">Diamond</div>
+            <div class="tier-req">$50,000 wagered</div>
+            <ul class="tier-perks">
+              <li>15% weekly cashback</li>
+              <li>Personal VIP host</li>
+              <li>Luxury event invites</li>
+              <li>Custom betting limits</li>
+              <li>Priority withdrawals</li>
+            </ul>
+            <button class="btn-ghost">Activate</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- DEPOSIT MODAL -->
+  <div class="modal-overlay" id="depositOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="depositModal">
+      <button class="modal-x" onclick="closeDeposit()">✕</button>
+      <h3 class="modal-title">💳 Add Funds</h3>
+      <p class="modal-note">Virtual credits for demo purposes</p>
+      <div class="deposit-grid">
+        <button class="dep-opt" onclick="addBalance(500)">+$500</button>
+        <button class="dep-opt" onclick="addBalance(1000)">+$1,000</button>
+        <button class="dep-opt" onclick="addBalance(5000)">+$5,000</button>
+        <button class="dep-opt featured" onclick="addBalance(10000)">+$10,000</button>
+      </div>
+      <div class="dep-divider">or enter custom amount</div>
+      <div class="dep-custom">
+        <input type="number" id="customAmt" placeholder="Custom amount ($)" min="1" />
+        <button class="btn-gold" onclick="addCustom()">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-suit">♠</span>
+        <span class="logo-word">BELLAGIO <em>GOLD</em></span>
+      </div>
+      <div class="footer-links">
+        <a href="#">Responsible Gambling</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Support</a>
+      </div>
+      <p class="footer-disclaimer">⚠️ All credits are virtual. For entertainment purposes only. 18+ only. Please gamble responsibly.</p>
+      <div class="footer-badges">
+        <span class="fbadge">🔒 SSL Secured</span>
+        <span class="fbadge">✓ Fair Play</span>
+        <span class="fbadge">18+</span>
+        <span class="fbadge">GamCare</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
